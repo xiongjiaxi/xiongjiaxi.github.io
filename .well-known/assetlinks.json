@@ -6,9 +6,9 @@
         ],
         "target": {
             "namespace": "android_app",
-            "package_name": "io.ionic.starter",
+            "package_name": "io.ionic.starterfido",
             "sha256_cert_fingerprints": [
-                "0C:3E:8A:7D:41:5B:65:89:D4:66:1C:60:AE:4E:6A:4B:A5:3A:3D:68:FD:02:92:87:EE:19:E9:2D:BB:5B:24:F2"
+                "F6:D2:50:AD:6A:61:F2:9C:83:98:5F:20:91:CF:00:A6:56:7D:C6:57:CA:18:B3:7F:20:F0:99:D8:69:D4:FB:8D"
             ]
         }
     }
