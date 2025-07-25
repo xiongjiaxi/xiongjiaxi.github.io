@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIDO2.0 サンプルアプリケーション</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        .section h2 {
+            color: #555;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .logged-in-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #d4edda;
+            border-radius: 5px;
+        }
+
+        .debug-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔐 FIDO2.0 Webサンプルアプリケーション </h1>
+        <!-- ユーザー登録セクション -->
+        <div class="section">
+            <button onclick="register()">🔑 WebAuthn認証器で登録</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        // Base64URLエンコード/デコード関数
+        function base64urlToBuffer(base64url) {
+            if (!base64url) {
+                throw new Error('Base64URL文字列が空またはnullです');
+            }
+            const base64 = base64url.replace(/-/g, '+').replace(/_/g, '/');
+            const padded = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+            return Uint8Array.from(atob(padded), c => c.charCodeAt(0));
+        }
+
+        function bufferToBase64url(buffer) {
+            const base64 = btoa(String.fromCharCode(...new Uint8Array(buffer)));
+            return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+        }
+
+        // ユーザー登録
+        async function register() {
+            try {
+                // WebAuthn API呼び出し_登録
+                const credential = await navigator.credentials.create({
+                    publicKey: {
+                        rp: {
+                            name: 'Local Development Test 3',
+                            id: 'xiongjiaxi.github.io', //ドメイン名
+                        },
+                        user: {
+                            id: new Uint8Array(16),
+                            name: 'dev@localhosttest3',
+                            displayName: 'Local Developer Test 3'
+                        },
+                        challenge: new Uint8Array(32), //サーバー側取得したチャレンジ
+                        pubKeyCredParams: [
+                            {
+                                type: 'public-key',
+                                alg: -7
+                            },
+                            {
+                                type: 'public-key',
+                                alg: -7
+                            }
+                        ],
+                        timeout: 60000,
+                        attestation: 'none',
+                        AuthenticatorSelection: {
+                            AuthenticatorAttachment: 'platform',
+                            requireResidentKey: true,
+                            userVerification: 'require'
+                        }
+                    }
+                });
+                console.log('登録成功ー:', credential)
+            } catch (error) {
+                console.error('登録エラー:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>
