@@ -192,10 +192,10 @@
                         ],
                         timeout: 180000,
                         attestation: 'none',
-                        AuthenticatorSelection: {
-                            AuthenticatorAttachment: 'cross-platform',
+                        authenticatorSelection: {
+                            authenticatorAttachment: 'platform',
                             requireResidentKey: true,
-                            userVerification: 'require'
+                            userVerification: 'required'
                         }
                     }
                 });
