@@ -11,15 +11,5 @@
                 "F6:D2:50:AD:6A:61:F2:9C:83:98:5F:20:91:CF:00:A6:56:7D:C6:57:CA:18:B3:7F:20:F0:99:D8:69:D4:FB:8D"
             ]
         }
-    },
-        {
-        "relation": [
-            "delegate_permission/common.handle_all_urls",
-            "delegate_permission/common.get_login_creds"
-        ],
-        "target": {
-            "namespace": "web",
-            "site":"https://xiongjiaxi.github.io"
-        }
     }
 ]
