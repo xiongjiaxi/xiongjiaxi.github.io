@@ -1,15 +1,15 @@
 [
-  {
-    "relation" : [
-      "delegate_permission/common.handle_all_urls",
-      "delegate_permission/common.get_login_creds"
-    ],
-    "target" : {
-      "namespace" : "android_app",
-      "package_name" : "jp.co.nri.crossplatform.e3uatuatfido",
-      "sha256_cert_fingerprints" : [
-        "AE:B2:CD:2E:6A:81:81:DD:AB:90:D5:A0:14:BB:09:7A:0D:D1:E8:A3:65:27:EF:97:3B:28:00:E1:BA:00:18:11"
-      ]
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls",
+            "delegate_permission/common.get_login_creds"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "jp.co.nri.crossplatform.e4fido",
+            "sha256_cert_fingerprints": [
+                "C1:65:AF:29:A9:17:BC:54:DC:17:F2:F6:FE:00:A2:8C:7F:A6:C6:95:E7:12:29:74:AD:5E:B9:BD:FE:81:AF:9A"
+            ]
+        }
     }
-  }
 ]
