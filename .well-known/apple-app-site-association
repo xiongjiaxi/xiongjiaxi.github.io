@@ -1,7 +1,14 @@
 {
     "webcredentials": {
         "apps": [
-            "M9MVQ29584.jp.co.nri.crossplatform.e3uatuatfido"
+            "M9MVQ29584.jp.co.nri.crossplatform.e4uatuatuat"
+        ],
+        "details": [
+          {
+            "appID": "M9MVQ29584.jp.co.nri.crossplatform.e4uatuatuat",
+            "paths": ["*"]
+          }
         ]
     }
 }
+
