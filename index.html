@@ -171,12 +171,12 @@
                 const credential = await navigator.credentials.create({
                     publicKey: {
                         rp: {
-                            name: 'Local Development Test 6'
+                            name: 'naibu renketsu test 1'
                         },
                         user: {
                             id: new Uint8Array(16),
-                            name: 'dev@localhosttest6',
-                            displayName: 'Local Developer Test 6'
+                            name: 'nairentest1',
+                            displayName: 'arrows Android 15 '
                         },
                         challenge: new Uint8Array(32), //サーバー側取得したチャレンジ
                         pubKeyCredParams: [
@@ -189,7 +189,7 @@
                                 alg: -257
                             }
                         ],
-                        timeout: 180000,
+                        timeout: 60000,
                         attestation: 'none',
                         authenticatorSelection: {
                             authenticatorAttachment: 'platform',
@@ -207,4 +207,5 @@
 </body>
 
 </html>
+
 
