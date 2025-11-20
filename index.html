@@ -171,11 +171,11 @@
                 const credential = await navigator.credentials.create({
                     publicKey: {
                         rp: {
-                            name: 'naibu renketsu test 1'
+                            name: 'Fido 検証用サーバー'
                         },
                         user: {
                             id: new Uint8Array(16),
-                            name: 'nairentest1',
+                            name: 'DiffDomainTest1',
                             displayName: 'arrows Android 15 '
                         },
                         challenge: new Uint8Array(32), //サーバー側取得したチャレンジ
@@ -207,5 +207,6 @@
 </body>
 
 </html>
+
 
 
