@@ -6,9 +6,9 @@
         ],
         "target": {
             "namespace": "android_app",
-            "package_name": "aizawa.securities.itradersplash1",
+            "package_name": "jp.co.nri.crossplatform.e4s1",
             "sha256_cert_fingerprints": [
-                "c1:65:af:29:a9:17:bc:54:dc:17:f2:f6:fe:00:a2:8c:7f:a6:c6:95:e7:12:29:74:ad:5e:b9:bd:fe:81:af:9a"
+                "fe:d9:ec:a9:53:93:7c:e6:b6:83:76:5b:71:0d:3a:67:76:6d:20:32:dc:3d:73:2e:c0:82:74:dc:79:68:35:6e"
             ]
         }
     }
