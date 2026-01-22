@@ -6,9 +6,9 @@
         ],
         "target": {
             "namespace": "android_app",
-            "package_name": "jp.co.nri.crossplatform.e4s1",
+            "package_name": "jp.co.nri.crossplatform.e4SDK",
             "sha256_cert_fingerprints": [
-                "AE:B2:CD:2E:6A:81:81:DD:AB:90:D5:A0:14:BB:09:7A:0D:D1:E8:A3:65:27:EF:97:3B:28:00:E1:BA:00:18:11"
+                "fe:d9:ec:a9:53:93:7c:e6:b6:83:76:5b:71:0d:3a:67:76:6d:20:32:dc:3d:73:2e:c0:82:74:dc:79:68:35:6e"
             ]
         }
     }
