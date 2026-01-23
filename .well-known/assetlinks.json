@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target" : { "namespace": "android_app", "package_name": "jp.co.nri.crossplatform.e4deeplink",
-               "sha256_cert_fingerprints": ["fe:d9:ec:a9:53:93:7c:e6:b6:83:76:5b:71:0d:3a:67:76:6d:20:32:dc:3d:73:2e:c0:82:74:dc:79:68:35:6e"] }
+               "sha256_cert_fingerprints": ["FE:D9:EC:A9:53:93:7C:E6:B6:83:76:5B:71:0D:3A:67:76:6D:20:32:DC:3D:73:2E:C0:82:74:DC:79:68:35:6E"] }
 }]
