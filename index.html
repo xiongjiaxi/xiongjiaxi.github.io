@@ -144,12 +144,29 @@
         <div class="section">
             <button onclick="register()">🔑 WebAuthn認証器で登録</button>
         </div>
-        <a href="https://xiongjiaxi.github.io/">testlink</a>
-
+        <a href="javascript:;" id="openApp">https://xiongjiaxi.github.io</a>
     </div>
 
     <script>
 
+        document.getElementById('openApp').onclick = function() {
+            const ua = navigator.userAgent;
+            const isIos = /iPad|iPhone|iPod/.test(ua);
+            const isAndroid = /android/i.test(ua);
+
+            const scheme = "https://xiongjiaxi.github.io";
+            const isIosStore = "https://www.baidu.com/;
+            const isAndStore = "https://capacitorjs.com/";
+
+            let fallbackUrl = isIos ? isIosStore : isAndStore;
+
+            window.location.href = scheme;
+
+            const timer = setTimeout(() => {
+                window.location.href = fallbackUrl;
+            },1500)
+        }
+        
         // Base64URLエンコード/デコード関数
         function base64urlToBuffer(base64url) {
             if (!base64url) {
@@ -208,6 +225,7 @@
 </body>
 
 </html>
+
 
 
 
