@@ -146,7 +146,7 @@
         </div>
 
         <div>
-            <a href="javascript:;" id="openApp">openApp_E4</a>
+            <a href="#" onclick=openApp();return false;>openApp_E4</a>
         </div>
 
         <div>
@@ -157,7 +157,7 @@
 
     <script>
 
-        document.getElementById('openApp').onclick = function() {
+        function openApp() {
             const ua = navigator.userAgent.toLowerCase();
             const isIos = /ipad|iphone|ipod/.test(ua);
             const isAndroid = /android/i.test(ua);
@@ -239,6 +239,7 @@
 </body>
 
 </html>
+
 
 
 
