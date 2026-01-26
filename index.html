@@ -169,7 +169,7 @@
                 },1500);
             } else if (isAndroid) {
                 const intentUrl = `intent://${scheme}#Intent;` + 
-                                  `scheme=E4UAT` + 
+                                  `scheme=E4UAT;` + 
                                   `package=${androidPackage};` + 
                                   `S.browser.fallback_url=${encodeURIComponent(isAndStore)};` +
                                   `end`;
@@ -235,6 +235,7 @@
 </body>
 
 </html>
+
 
 
 
