@@ -169,11 +169,15 @@
             if(isIos) {
                 window.location.herf = scheme;
                 setTimeout(function() {
-                    window.location.herf = isIosStore;
+                    window.location.href = isIosStore;
                 },1500);
             } else if (isAndroid) {
-                const intentUrl = "intent://mf-inv9940-trading-stpsg6.uat.starmf.jp#Intent;scheme=e4uat;package=jp.co.nri.crossplatform.AznNewAgLLL;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.twitter.android&hl=en;end;";
-                window.location.herf = intentUrl;
+                const intentUrl = `intent://${scheme}#Intent;` + 
+                                  `scheme=e4uat;` + 
+                                  `package=${androidPackage};` + 
+                                  `S.browser_fallback_url=${isAndStore};` +
+                                  `end`;
+                window.location.href = intentUrl;
             }
         }
         
@@ -235,6 +239,7 @@
 </body>
 
 </html>
+
 
 
 
