@@ -163,12 +163,13 @@
             const isAndroid = /android/i.test(ua);
             const scheme = "mf-inv9940-trading-stpsg6.uat.starmf.jp";
             const iosScheme = "https://mf-inv9940-trading-stpsg6.uat.starmf.jp";
+            const iosSchemeint = "e4uat://";
             const isIosStore = "https://itunes.apple.com/us/app/twitter/id333903271?mt=8";
             const isAndStore = "https://play.google.com/store/apps/details?id=com.twitter.android&hl=en";
             const androidPackage = "jp.co.nri.crossplatform.AznNewAgLLL";
 
             if(isIos) {
-                window.location.href = iosScheme;
+                window.location.href = iosSchemeint;
                 setTimeout(function() {
                     if(document.visibilityState === 'visible') {
                       window.location.href = isIosStore;
@@ -242,6 +243,7 @@
 </body>
 
 </html>
+
 
 
 
