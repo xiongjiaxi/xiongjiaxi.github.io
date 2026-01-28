@@ -169,7 +169,7 @@
             const androidPackage = "jp.co.nri.crossplatform.AznNewAgLLL";
 
             if(isIos) {
-                window.location.href = iosScheme;
+                window.location = iosScheme;
                 setTimeout(function() {
                     if(document.visibilityState === 'visible') {
                       window.location.href = isIosStore;
@@ -243,6 +243,7 @@
 </body>
 
 </html>
+
 
 
 
