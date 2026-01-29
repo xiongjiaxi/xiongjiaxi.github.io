@@ -171,18 +171,18 @@
             if(isIos) {
                 // e.preventDefault();
                 window.location = iosScheme;
-                setTimeout(function() {
-                    if(document.visibilityState === 'visible') {
-                      window.location.href = isIosStore;
-                    }
-                },2500);
+                // setTimeout(function() {
+                    // if(document.visibilityState === 'visible') {
+                      // window.location.href = isIosStore;
+                    // }
+                // },2500);
             } else if (isAndroid) {
-                const intentUrl = `intent://${scheme}#Intent;` + 
-                                  `scheme=e4uat;` + 
-                                  `package=${androidPackage};` + 
-                                  `S.browser_fallback_url=${isAndStore};` +
-                                  `end`;
-                window.location.href = intentUrl;
+                // const intentUrl = `intent://${scheme}#Intent;` + 
+                                  // `scheme=e4uat;` + 
+                                  // `package=${androidPackage};` + 
+                                  // `S.browser_fallback_url=${isAndStore};` +
+                                  // `end`;
+                window.location = iosScheme;
             }
         }
         
@@ -244,6 +244,7 @@
 </body>
 
 </html>
+
 
 
 
