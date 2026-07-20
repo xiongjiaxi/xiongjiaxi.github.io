@@ -1,21 +1,30 @@
 <script type="text/javascript">
-  window.im_segments = {};    
-  (function () {        
-    // IM-API Config
-    var im_src = 'https://xiongjiaxi.github.io/123.js';
-    var im_id = 'imCid1012448';
-    window.imSegmentsCallback = function (param) {
-      let im_uid = param.uid;
-      let im_sid = param.sids;
-      sessionStorage.setItem('im_uid', im_uid);
-      sessionStorage.setItem('im_sid', im_sid);        }
+  window.im_segments = {};
+  (function () {
+    function execute(url) {
+      // IM-API Config
+      var im_src = "https://xiongjiaxi.github.io/123.js";
+      var im_id = "imCid1012448";
+      window.imSegmentsCallback = function (param) {
+        let im_uid = param.uid;
+        let im_sid = param.sids;
+        sessionStorage.setItem("im_uid", im_uid);
+        sessionStorage.setItem("im_sid", im_sid);
+      };
       function callImApi() {
-        var s = document.createElement('script');
+        var s = document.createElement("script");
         s.src = im_src;
         s.id = im_id;
         s.setAttribute("data-callback", "imSegmentsCallback");
         document.head.appendChild(s);
       }
-    callImApi();
+      callImApi();
+      alert(url);
+      console.log(url);
+    }
+
+    window.remotePage = {
+      execute: execute,
+    };
   })();
 </script>
